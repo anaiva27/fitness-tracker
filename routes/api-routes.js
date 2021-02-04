@@ -1,15 +1,6 @@
 const Workout = require("../models/workout.js");
 const router = require("express").Router();
-// /api/workouts
 
-// api/workouts/" + id  --put
-
-// api/workouts/range  -- post
-
-// WTH is /exercise? route
-// /exercise
-
-//last workout
 router.get("/api/workouts", (req, res) => {
   Workout.aggregate([
     {
@@ -34,16 +25,6 @@ router.post("/api/workouts", (req, res) => {
     });
 });
 
-// router.post("/submit", ({ body }, res) => {
-//   Note.create(body)
-//     .then(({ _id }) => User.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true }))
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
 //add excersise
 router.put("/api/workouts/:id", (req, res) => {
   Workout.findByIdAndUpdate(

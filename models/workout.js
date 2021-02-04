@@ -9,11 +9,9 @@ const WorkoutSchema = new Schema({
   },
   exercises: [
     {
-      // OR? workoutType: {
       type: {
         type: String,
         required: "workout type is required",
-        // enum: ["resistance", "cardio"],
       },
       name: {
         type: String,
@@ -24,16 +22,16 @@ const WorkoutSchema = new Schema({
         required: "exercise duration is required",
       },
       weight: {
-        type: Number
+        type: Number,
       },
       reps: {
-        Number
+        Number,
       },
       sets: {
-        Number
+        Number,
       },
       distance: {
-        Number
+        Number,
       },
     },
   ],
