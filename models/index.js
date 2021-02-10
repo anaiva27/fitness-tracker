@@ -1,4 +1,4 @@
-// Exportingan object containing all of the models
+// exporting an object containing the model
 module.exports = {
   Workout: require("./workout"),
 };

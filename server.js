@@ -1,3 +1,4 @@
+// Requiring necessary npm packages
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
@@ -10,12 +11,15 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Static directory
 app.use(express.static(__dirname + "/public"));
 
+// connecting database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 // routes
